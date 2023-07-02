@@ -1,4 +1,4 @@
-// File: C:\Users\manutencao\Documents\Leadster-test\app\layout.tsx
+// File: C:\Users\Christovan Queiroz\Documents\GitHub\Leadster-test\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

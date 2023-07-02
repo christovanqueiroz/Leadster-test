@@ -1,3 +1,13 @@
+'use client';
+
+import Header from "../src/components/Header";
+import GlobalStyles from "../src/styles/GlobalStyles"
+
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>
+    return (
+      <div>
+        <Header/>
+        <GlobalStyles />
+      </div>
+    )
   }
