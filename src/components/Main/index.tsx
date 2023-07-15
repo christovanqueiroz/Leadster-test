@@ -8,6 +8,7 @@ import InputSelect from "../InputSelect/"
 import Videos from '../Videos';
 import PageSelector from '../PageSelector';
 import Demo from '../Demo';
+import Footer from '../Footer';
 
 const Main = () => {
     return (
@@ -22,6 +23,8 @@ const Main = () => {
             <PageSelector />
 
             <Demo />
+
+            <Footer />
         </Container>
     );
 }
