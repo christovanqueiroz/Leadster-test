@@ -7,6 +7,13 @@ export const Container = styled.div`
     gap: 1.5em;
     flex-wrap: wrap;
     margin: 2em 0;
+    @media (max-width: 800px) {
+        justify-content: center;
+    }
+
+    @media (max-width: 300px) {
+        overflow: hidden;
+    }
 `;
 
 export const Thumbnail = styled.div`
@@ -14,6 +21,10 @@ export const Thumbnail = styled.div`
     width: 100%;
     object-fit: contain;
     border-radius: 20px 20px 0px 0px;
+    
+    @media (max-width: 300px) {
+        max-width: 80%;
+    }
 `;
 
 export const SelectedVideo = styled.div `
@@ -23,13 +34,13 @@ export const SelectedVideo = styled.div `
     position: relative;
     top: -170px;
     border-radius: 20px 20px 0px 0px;
-    visibility: hidden;
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 
-export const VideoTitle = styled.span`
+export const VideoTitle = styled.div`
     height: 30%;
     width: 100%;
     background-color: #FFF;
@@ -48,8 +59,15 @@ export const VideoPlayer = styled.div`
     flex-direction: column;
     border-radius: 20px;
     cursor: default;
+    overflow: hidden;
+
+    @media (max-width: 300px) {
+        width: 200px;
+    }
+
     &:hover ${SelectedVideo}{
-        visibility: visible;
+        opacity: 100;
+        transition: .75s;
     }
 
     &:hover ${VideoTitle}{

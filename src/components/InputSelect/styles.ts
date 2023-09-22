@@ -8,6 +8,17 @@ export const Container = styled.div`
     font-size: 12px;
     align-items: center;
     justify-content: center;
+    @media (max-width: 600px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: end;
+        margin: 0;
+        gap: 0;
+    }
+
+    @media (max-width: 300px) {
+        align-items: center;
+    }
 `;
 
 

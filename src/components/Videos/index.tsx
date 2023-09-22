@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+
 import {
     Container,
     VideoPlayer,
@@ -14,21 +16,40 @@ const borderRadius = {
 
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import VideoModal from '../VideoModal';
+import VideoModal, { DadosDoVideo } from '../VideoModal';
 
+import videosJSON from "../../mock/videos.json"
+
+const handlePage = () => {
+    TituloDoVideo();
+    DadosDoVideo();
+}
+
+const TituloDoVideo = () => {
+    videosJSON.map(function(valorEscolhido, indice:any){
+        const videoID = document.getElementById(indice);
+        let videoTitle = videoID.lastElementChild
+        videoTitle.innerHTML = valorEscolhido.title
+        let videoImage: HTMLImageElement = videoID.lastElementChild.previousElementSibling.previousElementSibling.children.item(0)
+        videoImage.src = valorEscolhido.image
+     })
+};
 
 const Videos = () => {
     const [showModal, setShowModal] = useState(false);
+
     return (
-        <Container>
+        <Container onLoad={() => handlePage()}>
             {showModal && createPortal(
                 <VideoModal onClose={() => setShowModal(false)} />,
                 document.body
             )}
-            <VideoPlayer onClick={() => setShowModal(true)}>
+
+            <VideoPlayer id="0" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
-                    <Image 
-                        src="/../public/assets/thumbnail.png"
+                    <Image
+                        src=""
+                        loading='lazy'
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -46,14 +67,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="1" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -71,14 +91,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="2" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -96,14 +115,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="3" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -121,14 +139,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="4" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -146,14 +163,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="5" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -171,14 +187,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="6" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -196,14 +211,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="7" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -221,14 +235,13 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
 
-            <VideoPlayer onClick={() => setShowModal(true)}>
+            <VideoPlayer id="8" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src="/../public/assets/thumbnail.png"
+                        src=""
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -246,12 +259,9 @@ const Videos = () => {
                 </SelectedVideo>
 
                 <VideoTitle>
-                    Como aumentar sua Geração de Leads feat. Traktor
                 </VideoTitle>
             </VideoPlayer>
-
         </Container>
     );
 }
-
 export default Videos;

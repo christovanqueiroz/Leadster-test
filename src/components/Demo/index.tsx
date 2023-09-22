@@ -1,5 +1,6 @@
 import {
     Container,
+    ImageContainer,
     Content,
     Title,
     Infos,
@@ -15,12 +16,16 @@ import Image from 'next/image';
 const Demo = () => {
     return (
         <Container>
-           <Image 
-                src="/../public/assets/comparativo_img_CTA.png"
-                width={400}
-                height={371}
-                alt="Geração de Leads"
-            />
+            <ImageContainer>
+                <Image 
+                    src="/../public/assets/comparativo_img_CTA.png"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={true}
+                    alt="Geração de Leads"
+                />
+            </ImageContainer>
+           
 
             <Content>
                 <Title>

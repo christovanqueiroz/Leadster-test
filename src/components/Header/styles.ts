@@ -46,6 +46,9 @@ export const TitleContainer = styled.div`
 export const TitleOne = styled.h2`
     color: #1c3c50;
     font-size: 36px;
+    @media (max-width: 600px) {
+        font-size: 24px;
+    }
 `;
 
 export const TitleTwo = styled.h1`
@@ -53,6 +56,13 @@ export const TitleTwo = styled.h1`
     font-size: 64px;
     padding-bottom: 12px;
     border-bottom: 1px solid #e0e0e0;
+    @media (max-width: 600px) {
+        font-size: 48px;
+    }
+
+    @media (max-width: 389px) {
+        font-size: 20px;
+    }
 `;
 
 export const Paragraph = styled.p`
@@ -69,4 +79,13 @@ export const TextAsset = styled.div`
     position: relative;
     bottom: 114px;
     left: 455px;
+
+    @media (max-width: 600px) {
+        left: 380px;
+        bottom: 100px;
+    }
+
+    @media (max-width: 470px) {
+        display: none;
+    }
 `;

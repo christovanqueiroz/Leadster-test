@@ -20,6 +20,15 @@ export const Container = styled.div`
     background-color: #FFF;
     border-radius: 12px;
     border-top: 3px solid #0081fd;
+    overflow-y: scroll;
+
+    @media (max-width: 1200px) {
+        width: 50%;
+    }
+
+    @media (max-width: 384px) {
+        width: 80%;
+    }
 `;
 
 export const Title = styled.div`
@@ -32,13 +41,23 @@ export const Title = styled.div`
     font-size: 12px;
     text-align: center;
     padding: 4em;
+    @media (max-width: 1200px) {
+        font-size: 10px;
+        padding: 6em 0;
+    }
+
+    @media (max-width: 300px) {
+        font-size: 8px;
+    }
 `;
 
 export const CloseModal = styled.button`
-    height: 12px;
-    width: 12px;
-    background: none;
-    padding-bottom: 10px;
+    background: #f00;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 2px 0;
+    width: 24px;
+    border-radius: 100%;
 `;
 
 export const Player = styled.div`
@@ -60,18 +79,4 @@ export const DescriptionTitle = styled.span`
 export const DescriptionText = styled.p`
     margin-top: .5em;
     border-top: 1px solid #e0e0e0;
-`;
-
-export const Downloads = styled.div`
-    height: 15%;
-    width: 100%;
-    padding: 1em;
-    font-size: 12px;
-`;
-
-export const DownloadsTitle = styled.span`
-    font-weight: bold;
-`;
-
-export const DownloadsLinks = styled.ul`
 `;
