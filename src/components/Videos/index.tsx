@@ -30,7 +30,7 @@ const TituloDoVideo = () => {
         const videoID = document.getElementById(indice);
         let videoTitle = videoID.lastElementChild
         videoTitle.innerHTML = valorEscolhido.title
-        let videoImage: HTMLImageElement = videoID.lastElementChild.previousElementSibling.previousElementSibling.children.item(0)
+        let videoImage = videoID.lastElementChild.previousElementSibling.previousElementSibling.children.item(0)
         videoImage.src = valorEscolhido.image
      })
 };
