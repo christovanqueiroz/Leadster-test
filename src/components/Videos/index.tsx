@@ -20,7 +20,7 @@ import VideoModal, { DadosDoVideo } from '../VideoModal';
 
 import videosJSON from "../../mock/videos.json"
 
-const handlePage = () => {
+export const handlePage = () => {
     TituloDoVideo();
     DadosDoVideo();
 }
@@ -30,7 +30,7 @@ const TituloDoVideo = () => {
         const videoID = document.getElementById(indice);
         let videoTitle = videoID.lastElementChild
         videoTitle.innerHTML = valorEscolhido.title
-        let videoImage = videoID.lastElementChild.previousElementSibling.previousElementSibling.children.item(0)
+        let videoImage: any = videoID.lastElementChild.previousElementSibling.previousElementSibling.children.item(0)
         videoImage.src = valorEscolhido.image
      })
 };
@@ -39,7 +39,7 @@ const Videos = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <Container onLoad={() => handlePage()}>
+        <Container>
             {showModal && createPortal(
                 <VideoModal onClose={() => setShowModal(false)} />,
                 document.body
@@ -48,7 +48,7 @@ const Videos = () => {
             <VideoPlayer id="0" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image
-                        src=""
+                        src={undefined}
                         loading='lazy'
                         width={300}
                         height={168}
@@ -73,7 +73,7 @@ const Videos = () => {
             <VideoPlayer id="1" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -97,7 +97,7 @@ const Videos = () => {
             <VideoPlayer id="2" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -121,7 +121,7 @@ const Videos = () => {
             <VideoPlayer id="3" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -145,7 +145,7 @@ const Videos = () => {
             <VideoPlayer id="4" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -169,7 +169,7 @@ const Videos = () => {
             <VideoPlayer id="5" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -193,7 +193,7 @@ const Videos = () => {
             <VideoPlayer id="6" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -217,7 +217,7 @@ const Videos = () => {
             <VideoPlayer id="7" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
@@ -241,7 +241,7 @@ const Videos = () => {
             <VideoPlayer id="8" className="videoData" onClick={() => setShowModal(true)}>
                 <Thumbnail>
                     <Image 
-                        src=""
+                        src={undefined}
                         width={300}
                         height={168}
                         alt="Thumbnail"
